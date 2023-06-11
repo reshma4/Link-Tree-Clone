@@ -1,0 +1,47 @@
+<%= form_with(model: profile) do |form| %>
+  <% if profile.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+        <% profile.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :youtube, style: "display: block" %>
+    <%= form.text_field :youtube %>
+  </div>
+
+  <div>
+    <%= form.label :twitch, style: "display: block" %>
+    <%= form.text_field :twitch %>
+  </div>
+
+  <div>
+    <%= form.label :twitter, style: "display: block" %>
+    <%= form.text_field :twitter %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :other, style: "display: block" %>
+    <%= form.text_field :other %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
